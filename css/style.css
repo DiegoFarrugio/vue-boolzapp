@@ -1,0 +1,73 @@
+.big-container{
+    background-color: rgb(217, 219, 215);
+    width: 100%;
+    height: 750px;
+    border: 2px dashed red;
+}
+
+.two-big-container{
+    width: 85%;
+    height: 90%;
+    background-color: lightcoral;
+    border: 2px dashed green;
+    margin: auto;
+}
+
+.col-left{
+    background-color: aqua;
+    border: 2px dashed blue;
+    max-height: 800px;
+}
+
+.col-right{
+    background-color: burlywood;
+    border: 2px dashed purple;
+    max-height: 800px;
+}
+
+.my-utent{
+    width: 100%;
+    border: 2px solid black;
+    background-color: rgb(235, 235, 235);
+}
+
+.friend-utent-active-chat{
+    width: 100%;
+    border: 2px solid black;
+}
+
+.notification-messages{
+    background-color: rgb(141, 217, 252);
+    border: 2px solid black;
+}
+
+.time-message-sent{
+    text-align: right;
+}
+
+.card-chat-friends{
+    background-color: white;
+    border: 1px solid black;
+    width: 100%;
+}
+
+.img-card-friends{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.last-message-sent, .hour-last-message{
+    font-size: 12px;
+    color: grey;
+}
+
+.background-chat{
+    background-image: url(../img/mine.jpg);
+
+}
+
+.two-big-container .margin_padding_0{
+    padding: 0;
+    margin: 0;
+}
