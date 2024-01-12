@@ -5,11 +5,12 @@ Visualizzazione dinamica della lista contatti: tramite la direttiva v-for,
 visualizzare nome e immagine di ogni contatto*/
 
 
-const {createApp} = Vue; 
+const {createApp} = Vue
 
 createApp({
     data(){
         return{
+            activeContact : 1,
             contacts: [
                 {
                     name: 'Michele',
@@ -50,7 +51,7 @@ createApp({
                         },
                         {
                             date: '20/03/2020 16:35:00',
-                            message: 'Mi piacerebbe ma devo andare a fare la spesa.',
+                            message: 'Ma ma devo andare a fare la spesa.',
                             status: 'sent'
                         }
                     ],
@@ -177,6 +178,12 @@ createApp({
     },
 
     methods : {
+
+        cardChatFriends(i){
+            console.log('cliccato elemento', i);
+            this.activeContact = i;
+        }
+        //Cliccando all'interno della classe card-chat-friends mi deve cambiare schermata per ogni utente cliccato
 
     }
 

@@ -62,7 +62,7 @@
                         <div>
 
                          <!-- INIZIO CHAT WHATSAPP-->   
-                        <div v-for="(contact, i) in contacts" class="card-chat-friends d-flex align-items-center justify-content-between ">
+                        <div v-for="(contact, i) in contacts" @click="cardChatFriends(i)" class="card-chat-friends d-flex align-items-center justify-content-between ">
                             <div class="d-flex align-items-center ">
                                 <div>
                                     <img class="p-1 img-card-friends" :src="contact.avatar" :alt="contact.name">
@@ -93,12 +93,12 @@
                     
                     <div class="margin_padding_0 col-8 col-right background-chat position-relative-chat">
                         
-                        <div class="card-chat-friends d-flex align-items-center justify-content-between ">
+                        <div @click="cardChatFriends(i)" class="card-chat-friends d-flex align-items-center justify-content-between ">
                             <div class="d-flex align-items-center ">
                                 <div>
                                     <img class="p-1 img-card-friends" src="img/avatar_1.jpg" alt="">
                                 </div>
-                                <div >
+                                <div>
                                     <div class="ms-2">
                                         <strong>Michele</strong>
                                     </div>
@@ -120,16 +120,12 @@
                         </div>
 
                         
-                        <div class="chat">
-                            <div class="container-sent mb-3 ">
-                                 <span class="sent">Hai portato a spasso il cane?</span>
+                        <div  class="chat">
+                            <div v-for="(chat, i) in contacts[activeContact].messages" class="container-sent mb-3 ">
+                                 <span :class="chat.status == 'sent' ? 'sent' : 'received'">
+                                    {{chat.message}}
+                                </span>  
                             </div>
-                            <div class="container-sent mb-5 ">
-                                 <span class="sent">Ricordati di stendere i panni.</span>
-                             </div>
-                             <div class="container-received mb-5 ">
-                                 <span class="received">Si, tutto fatto!</span>
-                             </div>
                          </div>
 
 

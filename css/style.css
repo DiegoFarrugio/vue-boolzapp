@@ -51,6 +51,15 @@
     width: 100%;
 }
 
+.card-chat-friends:active{
+    background-color: white;
+    cursor: pointer;
+}
+
+.card-chat-friends:hover{
+    background-color: rgb(227, 224, 224);
+}
+
 .img-card-friends{
     width: 60px;
     height: 60px;
