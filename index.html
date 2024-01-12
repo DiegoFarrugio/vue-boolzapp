@@ -122,7 +122,7 @@
                         
                         <div  class="chat">
                             <div v-for="(chat, i) in contacts[activeContact].messages" class="container-sent mb-3 ">
-                                 <span :class="chat.status == 'sent' ? 'sent' : 'received'">
+                                 <span @click="setTimeout()" :class="chat.status == 'sent' ? 'sent' : 'received'">
                                     {{chat.message}}
                                 </span>  
                             </div>
@@ -135,7 +135,7 @@
                                     <span class="input-group-text">
                                         <i class="fa-regular fa-face-smile fa-xl p-3"></i>
                                     </span>
-                                    <input type="text" class="form-control" placeholder="Scrivi un messaggio">
+                                    <input @keyup.enter="sendNewMessage()" v-model="newMessage" type="text" class="form-control" placeholder="Scrivi un messaggio">
                                     <span class="input-group-text">
                                         <i class="fa-solid fa-microphone fa-xl p-3"></i>
                                     </span>

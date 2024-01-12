@@ -10,6 +10,7 @@ const {createApp} = Vue
 createApp({
     data(){
         return{
+            newMessage : "",
             activeContact : 1,
             contacts: [
                 {
@@ -182,8 +183,32 @@ createApp({
         cardChatFriends(i){
             console.log('cliccato elemento', i);
             this.activeContact = i;
+        },
+
+        userResponse(){
+            const newObj ={
+                date: '10/01/2020 15:50:00',
+                message: 'Ok!',
+                status: 'received'
+            };
+            this.contacts[this.activeContacts].messages.push(newObj);
+        },
+
+        sendNewMessage(){
+            const newObj = {
+                date: '10/01/2020 15:50:00',
+                message : this.newMessage.trim(),
+                status: 'sent'
+            };
+
+        this.contacts[this.activeContact].messages.push(newObj),
+        this.newMessage = "";
+        setTimeout(this.userResponse, 1000);
         }
-        //Cliccando all'interno della classe card-chat-friends mi deve cambiare schermata per ogni utente cliccato
+
+    
+        
+
 
     }
 
