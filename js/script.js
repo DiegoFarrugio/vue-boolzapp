@@ -10,8 +10,9 @@ const {createApp} = Vue
 createApp({
     data(){
         return{
+            searchChat : "",
             newMessage : "",
-            activeContact : 1,
+            activeContact : 0,
             contacts: [
                 {
                     name: 'Michele',
@@ -204,12 +205,57 @@ createApp({
         this.contacts[this.activeContact].messages.push(newObj),
         this.newMessage = "";
         setTimeout(this.userResponse, 1000);
+        },
+
+        filterContact(){
+            for(let i = 0; i < this.contacts.length; i++){
+
+                if(this.contacts[i].name.toLowerCase().includes(this.searchChat)){
+                    this.contacts[i].visible = true;
+                }
+
+                else{
+                    this.contacts[i].visible = false;
+                }
+            }
+            
         }
-
-    
-        
-
-
-    }
+     }
 
 }).mount('#app');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

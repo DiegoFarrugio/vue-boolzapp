@@ -2,43 +2,36 @@
     background-color: rgb(217, 219, 215);
     width: 100%;
     height: 750px;
-    border: 2px dashed red;
 }
 
 .two-big-container{
     width: 85%;
     height: 90%;
-    background-color: lightcoral;
-    border: 2px dashed green;
     margin: auto;
 }
 
 .col-left{
-    background-color: aqua;
-    border: 2px dashed blue;
     max-height: 800px;
+    border: 8px solid rgb(227, 224, 224);
 }
 
 .col-right{
-    background-color: burlywood;
-    border: 2px dashed purple;
     max-height: 800px;
+    border: 8px solid rgb(227, 224, 224);
 }
 
 .my-utent{
     width: 100%;
-    border: 2px solid black;
     background-color: rgb(235, 235, 235);
 }
 
 .friend-utent-active-chat{
     width: 100%;
-    border: 2px solid black;
+    border: 2px solid grey;
 }
 
 .notification-messages{
     background-color: rgb(141, 217, 252);
-    border: 2px solid black;
 }
 
 .time-message-sent{
@@ -47,13 +40,16 @@
 
 .card-chat-friends{
     background-color: white;
-    border: 1px solid black;
+    border: 1px solid rgb(227, 224, 224);
     width: 100%;
 }
 
 .card-chat-friends:active{
     background-color: white;
     cursor: pointer;
+}
+
+.margin-card-diego{
 }
 
 .card-chat-friends:hover{

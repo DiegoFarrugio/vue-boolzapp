@@ -19,12 +19,12 @@
     <div id="app">
         
         <div class="container-fluid big-container">
-            <div class="two-big-container mt-4 ">
+            <div class="two-big-container">
 
                 <div class="row">
                     <div class="margin_padding_0 col-4 col-left">
 
-                        <div class="card-chat-friends d-flex align-items-center justify-content-between ">
+                        <div class="card-chat-friends d-flex align-items-center justify-content-between margin-card-diego">
                             <div class="d-flex align-items-center ">
                                 <div>
                                     <img class="p-1 img-card-friends" src="img/avatar_3.jpg" alt="">
@@ -56,14 +56,14 @@
                         <div>
                             <div class="input-group flex-nowrap mt-1 mb-1 ">
                                 <span class="input-group-text" id="addon-wrapping"><i class="fa-solid fa-magnifying-glass"></i></span>
-                                <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-label="Cerca o inizia una nuova chat" aria-describedby="addon-wrapping">
+                                <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" v-model="searchChat" @keyup="filterContact()">
                               </div>
                         </div>
                         <div>
 
                          <!-- INIZIO CHAT WHATSAPP-->   
                         <div v-for="(contact, i) in contacts" @click="cardChatFriends(i)" class="card-chat-friends d-flex align-items-center justify-content-between ">
-                            <div class="d-flex align-items-center ">
+                            <div v-if="contact.visible == true" class="d-flex align-items-center ">
                                 <div>
                                     <img class="p-1 img-card-friends" :src="contact.avatar" :alt="contact.name">
                                 </div>
@@ -77,7 +77,7 @@
                                 </div>
                             </div>
                                 <div>
-                                    <div class="last-message-sent me-2 ">
+                                    <div v-if="contact.visible == true" class="last-message-sent me-2 ">
                                         12:00
                                     </div>
                                 </div>
@@ -122,7 +122,9 @@
                         
                         <div  class="chat">
                             <div v-for="(chat, i) in contacts[activeContact].messages" class="container-sent mb-3 ">
-                                 <span @click="setTimeout()" :class="chat.status == 'sent' ? 'sent' : 'received'">
+                                 <span :class="chat.status == 'sent' ? 'sent' : 'received'">
+                                    <!--Riga 125 significa: Se chat.status(sarebbe il singolo elemento), è uguale(==) a sent, 
+                                    ALLORA applichi la classe sent, ALTRIMENTI(:) scrivi received -->
                                     {{chat.message}}
                                 </span>  
                             </div>
@@ -147,6 +149,7 @@
             </div>
         </div>
     </div>
+
 
 
 
