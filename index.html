@@ -56,7 +56,7 @@
                         <div>
                             <div class="input-group flex-nowrap mt-1 mb-1 ">
                                 <span class="input-group-text" id="addon-wrapping"><i class="fa-solid fa-magnifying-glass"></i></span>
-                                <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" v-model="searchChat" @keyup="filterContact()">
+                                <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" v-model="searchChat" @keyup="filterContact(i)">
                               </div>
                         </div>
                         <div>
@@ -96,11 +96,11 @@
                         <div @click="cardChatFriends(i)" class="card-chat-friends d-flex align-items-center justify-content-between ">
                             <div class="d-flex align-items-center ">
                                 <div>
-                                    <img class="p-1 img-card-friends" src="img/avatar_1.jpg" alt="">
+                                    <img class="p-1 img-card-friends" :src="contacts[activeContact].avatar" :alt="contacts[activeContact].name">
                                 </div>
                                 <div>
                                     <div class="ms-2">
-                                        <strong>Michele</strong>
+                                        <strong> {{contacts[activeContact].name}} </strong>
                                     </div>
                                     <div class="last-message-sent ms-2 ">
                                         Ultimo messaggio inviato oggi alle ore 12:00

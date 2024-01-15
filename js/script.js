@@ -186,14 +186,7 @@ createApp({
             this.activeContact = i;
         },
 
-        userResponse(){
-            const newObj ={
-                date: '10/01/2020 15:50:00',
-                message: 'Ok!',
-                status: 'received'
-            };
-            this.contacts[this.activeContacts].messages.push(newObj);
-        },
+
 
         sendNewMessage(){
             const newObj = {
@@ -204,8 +197,20 @@ createApp({
 
         this.contacts[this.activeContact].messages.push(newObj),
         this.newMessage = "";
-        setTimeout(this.userResponse, 1000);
-        },
+
+        setTimeout(() => {
+            const newResponseMessageObj = {
+                date: '10/01/2020 15:50:00',
+                message: 'Ok!',
+                status: 'received'
+        };
+
+        this.contacts[this.activeContact].messages.push(newResponseMessageObj);
+
+        }, 1000);
+    },
+
+        
 
         filterContact(){
             for(let i = 0; i < this.contacts.length; i++){
@@ -223,20 +228,6 @@ createApp({
      }
 
 }).mount('#app');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
