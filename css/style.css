@@ -1,3 +1,5 @@
+/*STRUTTURA*/
+
 .big-container{
     background-color: rgb(217, 219, 215);
     width: 100%;
@@ -20,18 +22,19 @@
     border: 8px solid rgb(227, 224, 224);
 }
 
-.my-utent{
-    width: 100%;
-    background-color: rgb(235, 235, 235);
-}
+/* FINE STRUTTURA */
 
-.friend-utent-active-chat{
-    width: 100%;
-    border: 2px solid grey;
-}
+
+
+/*DINAMICIZZAZIONE LATO SX - COL LEFT*/
 
 .notification-messages{
     background-color: rgb(141, 217, 252);
+    height: 70px;
+}
+
+.height-overflow-scroll{
+    height: 40px;
 }
 
 .time-message-sent{
@@ -42,6 +45,12 @@
     background-color: white;
     border: 1px solid rgb(227, 224, 224);
     width: 100%;
+    height: 60px;
+}
+
+.scrollbar{
+    height: calc(100% - 170px);
+    overflow: auto;
 }
 
 .card-chat-friends:active{
@@ -49,7 +58,11 @@
     cursor: pointer;
 }
 
-.margin-card-diego{
+.date-message-inviated{
+    font-size: 8px;
+    color: grey;
+    display: flex;
+    justify-content: end;
 }
 
 .card-chat-friends:hover{
@@ -61,6 +74,12 @@
     height: 60px;
     border-radius: 50%;
 }
+
+/* FINE STRUTTURA */
+
+
+
+/*DINAMICIZZAZIONE LATO DX - COL RIGHT*/
 
 .last-message-sent, .hour-last-message{
     font-size: 12px;
@@ -78,8 +97,7 @@
 }
 
 .chat-text-whatsapp{
-    margin-left: 25px;
-    width: 900px;
+    width: 100%;
 }
 
 .position-relative-chat{
@@ -87,12 +105,22 @@
 }
 
 .position-absolute-chat{
+    width: 100%;
     position: absolute;
     bottom: 0;
+    left: 0;
 }
+
+/* FINE STRUTTURA */
+
+
+
+/*CHAT TESTUALE WHATSAPP*/
 
 .chat{
     padding: 35px;
+    height: calc(100% - 60px);
+    overflow: auto;
 }
 
 .chat > *{
@@ -108,24 +136,27 @@
 }
 
 .sent{
-    background-color: rgb(214, 250, 187);
-    text-align: end;
+    /* background-color: rgb(214, 250, 187); */
+    display: flex;
+    justify-content: end;
 }
 
 .received{
-    background-color: white;
-}
-
-.container-sent{
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    margin-top: 5px;
-}
-.container-received{
+    /* background-color: white; */
     display: flex;
     justify-content: start;
-    align-items: center;
-    margin-top: 5px;
 }
+
+.sent > *{
+    background-color: rgb(214, 250, 187);
+    padding: 4px 8px;
+    border-radius: 8px;
+}
+.received > *{
+    background-color: white;
+    padding: 4px 8px;
+    border-radius: 8px;
+}
+
+/*FINE STRUTTURA*/
 

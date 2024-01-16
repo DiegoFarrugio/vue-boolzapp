@@ -190,17 +190,16 @@ createApp({
 
         sendNewMessage(){
             const newObj = {
-                date: '10/01/2020 15:50:00',
+                date: this.hourDateMessage(),
                 message : this.newMessage.trim(),
                 status: 'sent'
             };
 
         this.contacts[this.activeContact].messages.push(newObj),
         this.newMessage = "";
-
         setTimeout(() => {
             const newResponseMessageObj = {
-                date: '10/01/2020 15:50:00',
+                date: this.hourDateMessage(),
                 message: 'Ok!',
                 status: 'received'
         };
@@ -211,7 +210,6 @@ createApp({
     },
 
         
-
         filterContact(){
             for(let i = 0; i < this.contacts.length; i++){
 
@@ -224,7 +222,31 @@ createApp({
                 }
             }
             
-        }
+        },
+
+        hourDateMessage(){
+            let finalString = '';
+
+            const now = new Date();
+
+            finalString += now.getDate().toString().padStart(2, '0');
+            finalString+= '/';
+            finalString+= (now.getMonth() +1).toString().padStart(2, '0');
+            finalString+= '/';
+            finalString+= now.getFullYear();
+
+            finalString+= ' ';
+
+            finalString+= now.getHours().toString().padStart(2, '0');
+            finalString+= ':';
+            finalString+= now.getMinutes().toString().padStart(2, '0');
+            finalString+= ':';
+            finalString+= now.getSeconds().toString().padStart(2, '0');
+            
+            return finalString;
+            }
+        
+        
      }
 
 }).mount('#app');
